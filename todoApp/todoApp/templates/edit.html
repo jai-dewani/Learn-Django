@@ -1,0 +1,23 @@
+{% include 'partials/header.html' %}
+<header>
+	<br>
+	<h2 class="text-center">Edit > {{todo.title}}</h2>
+	<hr>
+</header>
+	<form action="{% url 'todo:edit' todo.id %} " method="POST">
+		{% csrf_token %}
+
+		<label for="title">Title</label>
+		<input type="text" class="form-control" name="title" id="title" value="{{todo.title}}">
+		<br>
+		<label for="text">Text</label>
+		<textarea type="text" class="form-control" name="text" id="text">{{todo.text}}
+		</textarea>
+		<br>
+		User: <input type="text" class="form-control" name="user" value="{{todo.user}}" readonly><br>
+		<input type="submit" class="btn btn-primary" value="Submit"/>
+	</form>
+	<br>
+	<a href="/"><< Go Back</a>
+
+{% include 'partials/footer.html' %}

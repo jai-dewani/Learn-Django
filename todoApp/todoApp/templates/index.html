@@ -1,0 +1,31 @@
+{% include 'partials/header.html' %}
+<header>
+	<br>
+	<h2 class="text-center">Hey {{request.user}}, your Todo list</h2>
+	<hr>
+</header>
+
+<ul>
+	{% for todo in todos %}
+		<div class="row">
+			<div class="col-sm">
+				<a href="/details/{{todo.id}}">
+					{{todo.title}}
+				</a>
+				: {{todo.text}}				
+			</div>
+			
+			<div class="col-sm">
+				<div class="text-right">
+				<a href="/edit/{{todo.id}}">Edit</a> | 
+				<a href="/delete/{{todo.id}}">Done</a>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+</ul>
+
+</body>
+</html>
+
+{% include 'partials/footer.html' %}

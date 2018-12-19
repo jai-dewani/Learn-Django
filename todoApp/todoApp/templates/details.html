@@ -1,0 +1,19 @@
+{% include 'partials/header.html' %}
+<br>
+<a href="/"><< Go back</a>
+<div class="text-center">
+	<div class="h2 font-weight-bold">{{todo.title}}</div>
+	<br>
+	<div class="h5">
+		{{todo.text}}
+	</div>
+	<div class="h6">
+		<small>Created on {{todo.created_at}} by {{todo.user}}</small>
+	</div>
+	<div>
+	<a href="/edit/{{todo.id}}">Edit</a> | 
+	<a href="/delete/{{todo.id}}">Detele</a>		
+	</div>
+</div>
+
+{% include 'partials/footer.html' %}

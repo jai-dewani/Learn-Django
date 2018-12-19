@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<title>Todo App</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <div class="container">
+	  	<a class="navbar-brand" href="/">Todo App</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav ml-auto">
+	    	{% ifequal user 'True' %}
+	    	<!-- {{user}} -->
+	    	<!-- {{request.user}} -->
+      		<li class="nav-item">
+	        	<a class="nav-link" href="/logoutuser">Logout</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/add">Add todo</a>
+			</li>
+			{% else %}
+			<!-- {{user}} -->
+			<!-- {{request.user}} -->
+			<li class="nav-item">
+				<a class="nav-link" href="/loginuser">Login</a>
+	    	</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/signupuser">SignUp</a>
+			</li>
+			{% endifequal %}
+	    </ul>
+	  </div>
+	  </div>
+	</nav>
+	
+	<div class="container">
+		

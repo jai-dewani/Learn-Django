@@ -1,0 +1,27 @@
+{% include 'partials/header.html' %}
+<header>
+	<br>
+	<h2 class="text-center">Login</h2>
+	<hr>
+</header>
+<div class="container">
+	<div class="text-right">
+		new User? <a href="/signupuser">SignUp</a> here
+	</div>
+	<div class="text-center">
+		{{message}}
+	</div>
+	<form accept="loginuser" method="POST">
+		{% csrf_token %}
+		<label for='username'>Username</label>
+		<input type="text" name="username" class='form-control'>
+		<br>
+		<label for="password">Password</label>
+		<input type="password" name="password" class="form-control">
+		<br>
+		<input type="submit" class="btn btn-primary" value="Login"/>
+	</form>
+</div>
+
+
+{% include 'partials/footer.html' %}
